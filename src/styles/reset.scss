@@ -1,0 +1,81 @@
+/*css reset*/
+@import "./theme.scss";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $font-c;
+}
+
+ul, li {
+  list-style: none;
+}
+
+html, body {
+  color: $font-c;
+  height: 100%;
+}
+
+.clear-fix {
+  &:before, &:after {
+    content: '';
+    display: block;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-l {
+  justify-content: flex-start;
+}
+
+.flex-r {
+  justify-content: flex-end;
+}
+
+.flex-item-mean {
+  flex: 1 1 auto;
+}
+
+::-webkit-search-cancel-button {
+  display: none;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,260 @@
+@mixin  backgroundSizeRepeat{
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  //background-image: unset!important;
+}
+@mixin  hide{
+  //display: none!important;
+}
+
+.main{
+  @include backgroundSizeRepeat;
+  width: 100%;
+  position: relative;
+
+  .header{
+    @include backgroundSizeRepeat;
+
+    height: 99px;
+  }
+  .footer{
+    @include backgroundSizeRepeat;
+    height: 33px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  .content{
+    height: 946px;
+    box-sizing: border-box;
+    padding: 8px 20px;
+    .content-top{
+      height: 600px;
+      display: flex;
+      text-align: left;
+      .left{
+        width: 600px;
+        height: 100%;
+        margin-right: 20px;
+        //@include hide;
+        .child{
+          width: 286px;
+          //width:360px;
+          height: 286px;
+          display: inline-block;
+        }
+        #typeOfCall{
+          margin-right: 20px;
+        }
+        #transactionInfo{
+        }
+        #specificAnalysis{
+          width: 100%;
+          height: 294px;
+          margin-top: 20px;
+        }
+      }
+      .center{
+        //min-width:500px;
+        flex: 1;
+        height: 100%;
+        //background: #2ed095;
+        #datePart{
+          display: flex;
+          justify-content: space-around;
+          padding: 0 15px;
+          .dateBox{
+            text-align: center;
+            font-size: 18px;
+            color: #0190bf;
+            font-weight: 700;
+            height: 120px;
+            margin: 15px 0 20px 0;
+            width: 25%;
+            padding: 15px 20px;
+            cursor: pointer;
+            p{
+              line-height: 45px;
+            }
+            .num{
+              color: #afdded;
+            }
+            &.active{
+              @include backgroundSizeRepeat;
+              background-image: url("./images/button01.png");
+              font-size: 22px;
+              color: #fff;
+              p{
+                line-height: 30px;
+                margin-bottom: 10px;
+              }
+              .num{
+                color: #fff;
+              }
+            }
+          }
+        }
+
+        #mapPart{
+          @include backgroundSizeRepeat;
+          @include hide;
+          background-image: url("./images/map_box.png");
+          //width: 712px;
+          height: 458px;
+        }
+      }
+      .right{
+        @include hide;
+        width: 594px;
+        height: 100%;
+        margin-left: 20px;
+      }
+    }
+    .content-bottom{
+      @include hide;
+      margin-top: 20px;
+      height: 288px;
+      display: flex;
+      text-align: left;
+      .left{
+        width: 492px;
+        height: 100%;
+        margin-right: 20px;
+      }
+      .center{
+        flex: 1;
+        height: 100%;
+      }
+      .right{
+        width: 434px;
+        height: 100%;
+        margin-left: 20px;
+      }
+    }
+  }
+  .title-left{
+    @include backgroundSizeRepeat;
+    display: inline-block;
+     background-image: url("./images/tiitle01.png");
+    width: 120px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+    color: #0190bf;
+    font-weight: 700;
+    &.un-active{
+       background-image: url("./images/tiitle02.png");
+      color: #05506b;
+    }
+    &.title_tab{
+      cursor: pointer;
+    }
+  }
+  .title-left-content{
+    height: 100%;
+    position: relative;
+    top: -44px;
+    padding-top: 44px;
+  }
+  .title-center{
+    @include backgroundSizeRepeat;
+    display: inline-block;
+     background-image: url("./images/tittle03.png");
+    width: 100%;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+    color: #0190bf;
+    font-weight: 700;
+    position: relative;
+    top: -15px;
+  }
+  .normal-border-box{
+    @include backgroundSizeRepeat;
+    border: 15px solid transparent;
+    border-image: url("./images/box.png") 30 30 round;
+    //background-image: url("./images/tmjiao_new.png");
+    &>div{
+      //border: 1px solid #0469a3;
+    }
+  }
+
+  .mask-part-content{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 99;
+  }
+  .maskPart{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: 100;
+  }
+  .the-dialog{
+    position: fixed;
+    //width: 100%;
+    //height: 100%;
+    //background: red;
+    top: 10%;
+    //left: 0;
+    opacity: unset;
+    z-index: 101;
+    @include backgroundSizeRepeat;
+    background-image: url("./images/box1_bg.png");
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 57px;
+    /* padding: 56px; */
+    padding-left: 45px;
+    padding-right: 45px;
+    .the-dialog-close{
+      width: 48px;
+      height: 48px;
+      @include backgroundSizeRepeat;
+      background-image: url("./images/close.png");
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .the-dialog-title{
+      width: 177px;
+      height: 46px;
+      @include backgroundSizeRepeat;
+      background-image: url("./images/tittle04.png");
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+      line-height: 45px;
+      font-size: 18px;
+      color: #0190bf;
+      font-weight: 700;
+    }
+    .the-dialog-content{
+      background: #051a28;
+    }
+  }
+  //#specificAnalysis,.rectangle-border-box{
+  //  @include backgroundSizeRepeat;
+  //  background-image: url("./images/tmjiao_602_295.png");
+  //  padding: 2px;
+  //}
+  //#industryAnalysis{
+  //  @include backgroundSizeRepeat;
+  //  background-image: url("./images/tmjiao_600_600.png");
+  //}
+}
